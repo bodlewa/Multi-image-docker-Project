@@ -1,0 +1,132 @@
+<div class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Cyber-Tech home">
+      <span class="brand-mark" aria-hidden="true">C</span>
+      <span class="brand-name">cyber<span>-tech</span></span>
+    </a>
+    <div class="topbar-meta">
+      <span class="edition-label">DEVSECOPS PLATFORM</span>
+      <span class="topbar-divider" aria-hidden="true"></span>
+      <span class="sprint-label">SPRINT 02</span>
+    </div>
+    <span class="environment-badge">
+      <span class="environment-dot" aria-hidden="true"></span>
+      DEVELOPMENT
+    </span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> BUILD WITH CONFIDENCE</p>
+        <h1 id="hero-title">Ship better.<br /><span>Ship securely.</span></h1>
+        <p class="hero-description">
+          A clearer path from your first commit to a release you can trust.
+          Bring your build, security checks, and delivery into one workflow.
+        </p>
+        <div class="hero-footnote">
+          <span class="footnote-icon" aria-hidden="true">↗</span>
+          <span>Small steps. Safer releases.</span>
+        </div>
+      </div>
+
+      <aside class="status-card" aria-live="polite" aria-labelledby="status-title">
+        <div class="status-card-heading">
+          <div>
+            <p class="card-kicker">SYSTEM CHECK</p>
+            <h2 id="status-title">Backend connection</h2>
+          </div>
+          <span
+            class="status-indicator"
+            [class.is-online]="backendState === 'success'"
+            [class.is-pending]="backendState === 'loading'"
+            [class.is-offline]="backendState === 'error'"
+            [attr.aria-label]="backendState"
+          ></span>
+        </div>
+
+        @if (backendState === 'loading') {
+          <div class="status-message">
+            <span class="status-symbol loading-symbol" aria-hidden="true">↻</span>
+            <p>Connecting to the backend...</p>
+          </div>
+        } @else if (backendState === 'error') {
+          <div class="status-message error-message">
+            <span class="status-symbol" aria-hidden="true">!</span>
+            <div>
+              <p class="status-result">Connection needs attention</p>
+              <p class="status-detail">{{ backendError }}</p>
+            </div>
+          </div>
+          <button class="retry-button" type="button" (click)="loadBackendStatus()">
+            Retry connection <span aria-hidden="true">↗</span>
+          </button>
+        } @else {
+          @if (helloResponse; as response) {
+            <div class="status-message success-message">
+              <span class="status-symbol" aria-hidden="true">✓</span>
+              <div>
+                <p class="status-result">{{ response.message }}</p>
+                <p class="status-detail">API status: {{ response.status }}</p>
+              </div>
+            </div>
+          }
+        }
+        <div class="status-card-footer">
+          <span>API</span>
+          <span>/api/hello</span>
+        </div>
+      </aside>
+
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+    </section>
+
+    <section class="workflow-section" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">YOUR DELIVERY WORKFLOW</p>
+          <h2 id="workflow-title">From commit to confident release.</h2>
+        </div>
+        <p class="section-note">A secure foundation for every sprint.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <article class="workflow-card">
+          <div class="workflow-card-top">
+            <span class="step-number">01</span>
+            <span class="workflow-icon icon-build" aria-hidden="true">↳</span>
+          </div>
+          <h3>Build</h3>
+          <p>Turn changes into a repeatable, reliable build.</p>
+          <span class="card-tag">AUTOMATE EARLY</span>
+        </article>
+        <article class="workflow-card">
+          <div class="workflow-card-top">
+            <span class="step-number">02</span>
+            <span class="workflow-icon icon-secure" aria-hidden="true">◇</span>
+          </div>
+          <h3>Secure</h3>
+          <p>Make security part of the process, not an afterthought.</p>
+          <span class="card-tag">SHIFT LEFT</span>
+        </article>
+        <article class="workflow-card">
+          <div class="workflow-card-top">
+            <span class="step-number">03</span>
+            <span class="workflow-icon icon-release" aria-hidden="true">↗</span>
+          </div>
+          <h3>Deliver</h3>
+          <p>Move from validated changes to release with confidence.</p>
+          <span class="card-tag">SHIP WITH CARE</span>
+        </article>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span><span class="footer-mark">C</span> CYBER-TECH · SPRINT 02</span>
+      <span>BUILT FOR BETTER DELIVERY</span>
+    </footer>
+  </main>
+</div>
+
+<router-outlet />

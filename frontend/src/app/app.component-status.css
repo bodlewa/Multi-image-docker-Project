@@ -1,0 +1,266 @@
+.status-result,
+.status-message p {
+  margin: 2px 0 0;
+  color: #f0f3ed;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.status-message .status-detail {
+  margin-top: 5px;
+  color: #aab8ac;
+  font-size: 10px;
+}
+
+.retry-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2px 0 13px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 5px;
+  background: #b6ef67;
+  color: #17251f;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background: #c8f68a;
+}
+
+.retry-button:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid #b6ef67;
+  outline-offset: 4px;
+}
+
+.status-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #3b4b42;
+  color: #92a197;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+}
+
+.hero-orbit {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  right: -120px;
+  top: -190px;
+  border: 1px solid rgb(182 239 103 / 11%);
+  border-radius: 50%;
+}
+
+.orbit-two {
+  width: 420px;
+  height: 420px;
+  right: -175px;
+  top: -245px;
+}
+
+.workflow-section {
+  padding: 56px 0 48px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.section-kicker {
+  margin-bottom: 10px;
+  color: #718176;
+  font-size: 9px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #1c2a22;
+  font-size: clamp(21px, 3vw, 27px);
+  font-weight: 650;
+  letter-spacing: -0.9px;
+}
+
+.section-note {
+  margin: 0 0 3px;
+  color: #78837b;
+  font-size: 11px;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.workflow-card {
+  min-height: 170px;
+  padding: 19px 20px;
+  border: 1px solid #e3e7df;
+  border-radius: 8px;
+  background: #fff;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgb(31 48 36 / 7%);
+}
+
+.workflow-card-top {
+  justify-content: space-between;
+}
+
+.step-number,
+.card-tag {
+  color: #829087;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.workflow-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #eff6e7;
+  color: #537c34;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.icon-secure {
+  background: #eaf3ef;
+  color: #39745e;
+}
+
+.icon-release {
+  background: #f4f1e5;
+  color: #947732;
+}
+
+.workflow-card h3 {
+  margin: 16px 0 5px;
+  color: #1e2b24;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.workflow-card p {
+  margin: 0;
+  color: #748078;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.card-tag {
+  display: inline-block;
+  margin-top: 14px;
+  color: #628144;
+  font-size: 8px;
+}
+
+.page-footer {
+  justify-content: space-between;
+  min-height: 55px;
+  border-top: 1px solid #e4e6df;
+  color: #879188;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-mark {
+  display: inline-grid;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.45; }
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 36px, 600px);
+  }
+
+  .topbar {
+    min-height: 68px;
+  }
+
+  .topbar-meta {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 42px 28px 30px;
+  }
+
+  .status-card {
+    max-width: none;
+  }
+
+  .workflow-section {
+    padding-top: 42px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-note {
+    margin-top: 9px;
+  }
+
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-card {
+    min-height: 145px;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-shell {
+    width: calc(100% - 28px);
+  }
+
+  .environment-badge {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+
+  .hero {
+    margin-top: 20px;
+    padding: 35px 20px 24px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    letter-spacing: -2.4px;
+  }
+
+  .page-footer {
+    font-size: 7px;
+  }
+}
